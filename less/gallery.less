@@ -1,0 +1,53 @@
+.gallery-row {
+	overflow: hidden;
+	&:after {
+		clear: both;
+	}
+	.item {
+		width: 25%;
+		display: inline-block;
+		float: left;
+		position: relative;
+		overflow: hidden;
+		&:hover {
+			.picture-caption {
+				background-color: rgba(0,0,0,.5);
+			}
+			.text {
+				opacity: 1;
+				transform: translate(0px);
+			}
+			.-galley {
+				&:after {
+					width: 80%;
+				}	
+			}
+		}
+	}
+}
+
+
+.gallery-picture {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	background: green;
+}
+
+.picture-caption {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.2);
+	padding: 40px;
+	>.text {
+		color: @white;
+		text-transform: uppercase;
+		font-size: 18px;
+		transform: translateX(100%);
+		opacity: 0;
+		transition: .4s;
+	}
+}
